@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">WatchBook</string>
+    <string name="watchbook">WatchBook</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="sign_in_to_continue">Sign In To Continue</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="enter_the_password">****************</string>
+    <string name="forget_password">Forget Password ?</string>
+    <string name="sign_in">Sign IN</string>
+    <string name="don_t_have_an_account">Don\'t Have an Account ?</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="enter_the_email_example_you_gmail_com">Enter the Email(example:you@gmail.com)</string>
+    <string name="create_account">Create Account</string>
+    <string name="create_a_account">Create a new account</string>
+    <string name="username">Username</string>
+    <string name="harke_bahadur">Harke Bahadur</string>
+    <string name="_9771234567890">+9771234567890</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="create_account_btn">Create account</string>
+    <string name="sign_In">Sign In</string>
+    <string name="already_have_an_account">Already have an Account ?</string>
+</resources>

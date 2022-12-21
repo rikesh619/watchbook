@@ -33,7 +33,7 @@ class SignupActivity : AppCompatActivity() {
 
 
 
-            signupUser(signupRequest)
+
         }
 
     }

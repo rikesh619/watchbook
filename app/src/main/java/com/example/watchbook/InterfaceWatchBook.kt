@@ -2,6 +2,7 @@ package com.example.watchbook
 
 import com.example.watchbook.dataclass.LoginRequest
 import com.example.watchbook.dataclass.LoginResponse
+import com.example.watchbook.dataclass.SignUpRequest
 import com.example.watchbook.dataclass.SignUpResponse
 import retrofit2.Call
 import retrofit2.http.Body

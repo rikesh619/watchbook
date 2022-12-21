@@ -7,9 +7,9 @@ data class SignUpRequest(
     @SerializedName("email")
     var email : String ,
     @SerializedName("password")
-    val password : String,
+    var password : String,
     @SerializedName("username")
-    val username : String ,
+    var username : String ,
     @SerializedName("phone")
-    val phone : Int
+    var phone : Int
 )

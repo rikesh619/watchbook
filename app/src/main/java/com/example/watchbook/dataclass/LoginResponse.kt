@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName
 
 data class LoginResponse(
     @SerializedName("user_id")
-    var user_id : Int ,
+    var user_id : Int? = null ,
     @SerializedName("email")
     @Expose
-    var email : String ,
+    var email : String? = null ,
     @SerializedName("password")
     @Expose
-    var password : String
+    var password : String? = null
 )

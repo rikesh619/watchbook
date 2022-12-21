@@ -3,6 +3,7 @@ package com.example.watchbook
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Toast
 import com.example.watchbook.client.ApiClient
 import com.example.watchbook.dataclass.SignUpRequest
@@ -28,25 +29,31 @@ class SignupActivity : AppCompatActivity() {
         }
 
         btn_create_acc.setOnClickListener {
-           val  signupRequest : SignUpRequest
+            if (TextUtils.isEmpty(sign_up_email.text.toString()) || TextUtils.isEmpty(sign_up_password.text.toString()) || TextUtils.isEmpty(sign_up_username.text.toString()) || TextUtils.isEmpty(sign_up_password_confirm.text.toString())){
+                val message: String = "All Blank Spots Need to be Filled.."
+                Toast.makeText(this@SignupActivity , message, Toast.LENGTH_SHORT).show()
+            }
+            val signupRequest : SignUpRequest = SignUpRequest()
+           signupRequest.email = sign_up_email.text.toString()
+            signupRequest.password = sign_up_password.text.toString()
+            signupRequest.username = sign_up_username.text.toString()
+            signupRequest.password = sign_up_password_confirm.text.toString()
 
 
-
-
-
+            signupUser(signupRequest)
         }
 
     }
 
     fun signupUser(signUpRequest: SignUpRequest){
 
-       val  signUpRequestCall :Call<SignUpResponse> = ApiClient.buildService(InterfaceWatchBook :: class.java).signupUser(signUpRequest)
-       signUpRequestCall.enqueue(object : Callback<SignUpResponse>{
+       val  signUpResponseCall :Call<SignUpResponse> = ApiClient.buildService(InterfaceWatchBook :: class.java).signupUser(signUpRequest)
+       signUpResponseCall.enqueue(object : Callback<SignUpResponse>{
            override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
 
                if (response.isSuccessful){
-
-
+                   val message: String = "Successfull ...."
+                   Toast.makeText(this@SignupActivity , message, Toast.LENGTH_SHORT).show()
                    startActivity(Intent(this@SignupActivity , MainActivity::class.java))
 
                }else{
@@ -56,7 +63,7 @@ class SignupActivity : AppCompatActivity() {
            }
 
            override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
-               val message: String = t.localizedMessage
+               val message: String = t.localizedMessage as String
                Toast.makeText(this@SignupActivity , message, Toast.LENGTH_SHORT).show()
            }
 

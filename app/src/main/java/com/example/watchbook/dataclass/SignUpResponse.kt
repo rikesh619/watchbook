@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 
 data class SignUpResponse(
     @get:SerializedName("user_id")
-    var user_id : Int,
+    var user_id : Int?=null,
     @SerializedName("email")
-    var email : String,
+    var email : String?=null,
     @SerializedName("password")
-    var password : String
+    var password : String?=null
 )
